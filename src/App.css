@@ -1,0 +1,60 @@
+.bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.topBar {
+  height: 30px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.view {
+  max-width: 480px;
+  height: 100%;
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navBar {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeBtn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.homeBtn:hover {
+  border-color: gray;
+}
+.homeBtn:active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.glass {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.4px);
+  -webkit-backdrop-filter: blur(5.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}

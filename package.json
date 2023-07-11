@@ -1,0 +1,41 @@
+{
+  "name": "vite-swc",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "scripts": {
+    "dev": "vite",
+    "docker-init": "docker-compose up --build --no-recreate -d && yarn docker-init:dev",
+    "docker-init:dev": "docker exec -it vite_docker yarn",
+    "docker-update": "docker stop vite_docker && docker rm vite_docker && yarn docker-init",
+    "docker-command": "docker exec -it vite_docker sh",
+    "docker-add": "docker exec -it vite_docker yarn add",
+    "docker": "docker exec -it vite_docker yarn dev",
+    "build": "tsc && vite build",
+    "build:docker": "docker exec -it vite_docker yarn build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "preview:docker": "docker exec -it vite_docker yarn preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-component": "^2.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "typescript": "^5.0.2",
+    "typescript-plugin-css-modules": "^5.0.1",
+    "vite": "^4.4.0"
+  }
+}
