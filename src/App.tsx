@@ -1,4 +1,5 @@
 import './App.css';
+import Home from './pages';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <div className="bg">
         <div className="topBar">topbar</div>
         <div className="view">
-          <div>hihi</div>
+          <Home />
         </div>
         <div className="navBar">
           <span className="homeBtn" />
