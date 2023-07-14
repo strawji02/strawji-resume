@@ -19,8 +19,12 @@
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnusedLabels": true,
+    "types": [
+      "vite/client"
+    ]
   },
   "include": [
     "src"
