@@ -11,6 +11,7 @@
     "docker-init": "docker-compose up --build --no-recreate -d && yarn docker-init:dev",
     "docker-init:dev": "docker exec -it vite_docker yarn",
     "docker-update": "docker stop vite_docker && docker rm vite_docker && yarn docker-init",
+    "docker-restart": "docker restart vite_docker",
     "docker-command": "docker exec -it vite_docker sh",
     "docker-add": "docker exec -it vite_docker yarn add",
     "docker": "docker exec -it vite_docker yarn dev",
