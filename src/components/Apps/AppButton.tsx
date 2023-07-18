@@ -25,7 +25,7 @@ const Icon = styled.img`
 function AppButton({ src, label, ...props }: AppButtonProps) {
   return (
     <IconButton>
-      <Icon src={src} />
+      <Icon draggable={false} src={src} />
       <div>{label}</div>
     </IconButton>
   );
