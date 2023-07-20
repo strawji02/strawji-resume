@@ -5,6 +5,7 @@ import Phone from '../../assets/Phone.svg';
 import Photos from '../../assets/Photos.svg';
 import Safari from '../../assets/Safari.svg';
 import { useElementSize } from '../../hooks/useElementSize';
+import SegmentedControls from '../SegmentedControls';
 import AppButton, { AppButtonProps } from './AppButton';
 
 const AppsGrid = styled.div<{ $width?: number }>`
@@ -17,7 +18,6 @@ const AppsGrid = styled.div<{ $width?: number }>`
 `;
 
 const AppSlide = styled.div`
-  height: 100%;
   position: relative;
   overflow-y: scroll;
   scroll-snap-type: x mandatory;
@@ -26,6 +26,7 @@ const AppSlide = styled.div`
   z-index: 1;
   display: block;
   overscroll-behavior: contain;
+  height: calc(100% - 80px);
 `;
 
 const AppWrapper = styled.div`
@@ -62,20 +63,27 @@ function Apps() {
   const { ref, width } = useElementSize<HTMLDivElement>();
 
   return (
-    <AppSlide ref={ref}>
-      <AppWrapper>
-        {apps.map((icons, appsIdx) => (
-          <AppsGrid $width={width} key={`app-grid-${appsIdx}-page`}>
-            {icons.map((props, iconsIdx) => (
-              <AppButton
-                key={`icon-${appsIdx}-app-${iconsIdx}-icon`}
-                {...props}
-              />
-            ))}
-          </AppsGrid>
-        ))}
-      </AppWrapper>
-    </AppSlide>
+    <>
+      <AppSlide ref={ref}>
+        <AppWrapper>
+          {apps.map((icons, appsIdx) => (
+            <AppsGrid $width={width} key={`app-grid-${appsIdx}-page`}>
+              {icons.map((props, iconsIdx) => (
+                <AppButton
+                  key={`icon-${appsIdx}-app-${iconsIdx}-icon`}
+                  {...props}
+                />
+              ))}
+            </AppsGrid>
+          ))}
+        </AppWrapper>
+      </AppSlide>
+      <SegmentedControls>
+        <div>label</div>
+        <div>label</div>
+        <div>label</div>
+      </SegmentedControls>
+    </>
   );
 }
 
